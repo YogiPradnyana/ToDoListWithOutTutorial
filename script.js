@@ -5,9 +5,13 @@ function add() {
   let newText = document.getElementById('new_text');
 
   // 2. Menambahkan li baru
-  let newTodo = '<li><span>' + newText.value + '</span></li>';
+  let newTodo = '<li><span onclick="beriGaris(this)">' + newText.value + '</span>' + '<span onclick="removeBtn()">[x]</span>' + '</li>';
   todo.insertAdjacentHTML('afterbegin', newTodo);
 
   // 3. Menghapus isi fieldnya
   newText.value = '';
+}
+
+function beriGaris(el) {
+  el.classList.toggle('done');
 }
