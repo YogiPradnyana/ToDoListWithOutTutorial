@@ -2,12 +2,16 @@ const todo = document.getElementById('todo');
 
 function showAlert(message, className) {
   const div = document.createElement('div');
-  div.className(`alert alert-${className}`);
+  div.className = `alert alert-${className}`;
   div.appendChild(document.createTextNode(message));
 
   const container = document.querySelectorAll('.container')[1];
   const form = document.querySelector('.form-todo');
   container.insertBefore(div, form);
+
+  setTimeout(() => {
+    document.querySelector('.alert').remove();
+  }, 2000);
 }
 
 function add() {
